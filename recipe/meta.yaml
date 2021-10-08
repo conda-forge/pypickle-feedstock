@@ -1,5 +1,5 @@
 {% set name = "pypickle" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pypickle-{{ version }}.tar.gz
-  sha256: 7ac2675f7ee9a04e42475347539b00e7de8e551e24e42a2c6a5ed7f6020326cf
+  sha256: 58986309fdcf9e36dc291da7a7991c070178bf4db554f19b92df045d49817dfa
 
 build:
   number: 0
