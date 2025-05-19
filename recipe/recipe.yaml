@@ -1,0 +1,44 @@
+schema_version: 1
+
+context:
+  name: pypickle
+  version: 2.0.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pypickle-${{ version }}.tar.gz
+  sha256: c3ae9a1f912c41ff934cfef1e501e736ab3a912f5e6a3bfc820eabb9c59426f1
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+    - wheel
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - pypickle
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Save and load variables in/from pickle files
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/erdogant/pypickle
+
+extra:
+  recipe-maintainers:
+    - thewchan
