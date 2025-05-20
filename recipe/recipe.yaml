@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pypickle
-  version: 2.0.0
+  version: "2.0.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pypickle-${{ version }}.tar.gz
-  sha256: c3ae9a1f912c41ff934cfef1e501e736ab3a912f5e6a3bfc820eabb9c59426f1
+  sha256: 0cc1ee65293e4dfa90f0db6435e8021c6a83346be98d0fee81aceb2dad1fb091
 
 build:
   number: 0
