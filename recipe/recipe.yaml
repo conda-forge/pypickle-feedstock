@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pypickle
-  version: "2.0.1"
+  version: "2.0.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pypickle-${{ version }}.tar.gz
-  sha256: 0cc1ee65293e4dfa90f0db6435e8021c6a83346be98d0fee81aceb2dad1fb091
+  sha256: d577e39cf501c7c80b1387f6d7dc885cf4efeba65f213df41226d1f24881b1e8
 
 build:
   number: 0
@@ -31,7 +31,9 @@ tests:
       imports:
         - pypickle
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   summary: Save and load variables in/from pickle files
